@@ -1,4 +1,10 @@
 ##Lab4_Embeded##
 
-Lab Number 4 pull request
+
+Timer testing:
+
+1. 1/8
+2. 4/10
+
+
 
