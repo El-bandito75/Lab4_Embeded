@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Lab4.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Lab4.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sat Jun 17 15:17:25 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sat Jun 17 15:33:44 2017
 <BR><P>
 <H3>Maximum Stack Usage =          0 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -573,12 +573,18 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup.o(RESET)
 </UL>
 <P><STRONG><a name="[7d]"></a>Start</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, main.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
+<BR><BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
 </UL>
 <P>
 <H3>
 Local Symbols
-</H3><P>
+</H3>
+<P><STRONG><a name="[7e]"></a>Delay</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, main.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Start
+</UL>
+<P>
 <H3>
 Undefined Global Symbols
 </H3><HR></body></html>
