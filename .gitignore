@@ -1,0 +1,8 @@
+﻿*.axf
+*_log.htm
+*.lnp
+*.map
+*.dep
+*.d
+*.lst
+*.o
