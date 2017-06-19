@@ -6,3 +6,5 @@
 *.d
 *.lst
 *.o
+*.bak
+*.david
