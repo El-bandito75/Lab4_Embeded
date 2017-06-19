@@ -8,3 +8,5 @@
 *.o
 *.bak
 *.david
+*.uvgui
+*.uvopt
