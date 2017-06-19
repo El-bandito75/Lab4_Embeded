@@ -1,6 +1,6 @@
 ;*******************************************************************
 ; main.s
-; Author: Michael Revilla & David Broker
+; Author: Michael Revilla & David Broker 
 ; Date Created: 11/18/2016
 ; Last Modified: 06/19/2017
 ; Section Number: 045
