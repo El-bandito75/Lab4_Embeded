@@ -4,7 +4,7 @@
 ; Date Created: 11/18/2016
 ; Last Modified: 06/19/2017
 ; Section Number: 045
-; Instructor: Serpen
+; Instructor: Gursel Serpen
 ; Lab number: 4
 ;   Brief description of the program
 ; The overall objective of this system is an interactive alarm
