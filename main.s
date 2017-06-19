@@ -54,11 +54,11 @@ loop   ;// dead loop
     
 Delay PROC ; delay function
     ldr r0, =0x30D40;
-nick
+delayFun
     SUB r0, r0, #1;
     STR r0, [r0];
     CMP r0, #0;
-    BNE nick;
+    BNE delayFun;
     BX LR ;
     ENDP
  
