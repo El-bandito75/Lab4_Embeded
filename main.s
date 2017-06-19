@@ -1,8 +1,8 @@
 ;*******************************************************************
 ; main.s
-; Author: Michael Revilla & His royal Highness King of the Gingers, David Broker, Earl of Ireland and all her seas.
+; Author: Michael Revilla & David Broker
 ; Date Created: 11/18/2016
-; Last Modified: 06/10/2017
+; Last Modified: 06/19/2017
 ; Section Number: 045
 ; Instructor: Serpen
 ; Lab number: 4
@@ -24,26 +24,20 @@ GPIO_PORTF_DIR_R        EQU   0x40025400
 GPIO_PORTF_AFSEL_R      EQU   0x40025420
 GPIO_PORTF_PUR_R        EQU   0x40025510
 GPIO_PORTF_DEN_R        EQU   0x4002551C
-GPIO_PORTF_LOCK_R          EQU   0x40025520
+GPIO_PORTF_LOCK_R       EQU   0x40025520
 GPIO_PORTF_CR_R         EQU   0x40025524
 GPIO_PORTF_AMSEL_R      EQU   0x40025528
 GPIO_PORTF_PCTL_R       EQU   0x4002552C
-SYSCTL_RCGCGPIO_R       EQU   0x400FE608 ;// should this be SYSCTL_RCGC2? Thats what is in the prelab& book
-PF4                        EQU      0x40025040
-PF3                        EQU      0x40025020
+SYSCTL_RCGCGPIO_R       EQU   0x400FE608 
+PF4                     EQU   0x40025040
+PF3                     EQU   0x40025020
  
        AREA    |.text|, CODE, READONLY, ALIGN=2
        THUMB
        EXPORT  Start
            
 Start
-    ;//negtaive logic
-    ;//pressed =0
-    ;//not pressed =1
-    ;//r3 -output
-    ;//r4 -input
-    ;//r2 - check var
-    
+   
     BL PortF_Init; //go to PortF_Init
     ;BL Delay;
     BL LED_OutputOFF; // turn led off
@@ -56,9 +50,7 @@ loop   ;// dead loop
     BL Delay;
     BL LED_OutputOFF;// if it isnt go to off
     BL Delay;
-    
-    ;//this is not need, becuase both on and off go back to loop, so it will never reach here
-    BL    loop;       
+     
     
 Delay PROC ; delay function
     ldr r0, =0x30D40;
@@ -103,7 +95,6 @@ PortF_Init ;// initialize port F
     NOP; // delay for clock to start
     NOP;
     
-    ;//do lock stuff, but PF0 is the only one that nees to be unlocked so we dont do it?
         
     LDR r1, =GPIO_PORTF_AMSEL_R; // turn off analog
     LDR r0, [r1];
@@ -132,13 +123,12 @@ PortF_Init ;// initialize port F
     BIC r0, #0x08; // set PF3 to zero
     STR r0, [r1];
  
-    ;//I am just turning on PF4 and PF3, we could do 0xFF to turn on all of port f !!!!!!!!!!
     LDR r1, =GPIO_PORTF_DEN_R; //turns on Digtial I/O
     LDR r0, [r1];
     ORR r0, #0x18;
     STR r0, [r1];
         
-    BX LR; //return
+    BX LR; 
     
  
  
