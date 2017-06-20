@@ -6,3 +6,7 @@
 *.d
 *.lst
 *.o
+*.bak
+*.david
+*.uvgui
+*.uvopt
